@@ -1,81 +1,30 @@
 {
-  "log": {
-    "level": "warn",
-    "timestamp": true
-  },
-  "dns": {
-    "servers": [
-      {
-        "tag": "dns_remote",
-        "address": "https://8.8.8.8/dns-query",
-        "detour": "proxy"
-      },
-      {
-        "tag": "dns_direct",
-        "address": "8.8.8.8",
-        "detour": "direct"
-      }
-    ],
-    "rules": [
-      {
-        "outbound": "any",
-        "server": "dns_direct"
-      }
-    ],
-    "strategy": "ipv4_only"
-  },
-  "inbounds": [
-    {
-      "type": "tun",
-      "tag": "tun-in",
-      "address": [
-        "172.19.0.1/30"
-      ],
-      "auto_route": true,
-      "strict_route": true,
-      "stack": "mixed",
-      "sniff": true
+  "tag": "💦 1 - VLESS - Domain : 443",
+  "type": "vless",
+  "server": "qqq.tzm-99.x10.mx",
+  "server_port": 443,
+  "tcp_fast_open": false,
+  "uuid": "11566ad8-9fb9-4f0e-b58a-cf8d02be15c7",
+  "packet_encoding": "",
+  "network": "tcp",
+  "tls": {
+    "enabled": true,
+    "server_name": "qqQ.tZM-99.X10.MX",
+    "record_fragment": false,
+    "insecure": false,
+    "alpn": ["http/1.1"],
+    "utls": {
+      "enabled": true,
+      "fingerprint": "chrome"
     }
-  ],
-  "outbounds": [
-    {
-      "type": "selector",
-      "tag": "proxy",
-      "outbounds": [
-        "VLESS-Node",
-        "direct"
-      ]
-    },
-    {
-      "type": "vless",
-      "tag": "VLESS-Node",
-      "server": "188.114.96.3",
-      "server_port": 443,
-      "uuid": "11566ad8-9fb9-4f0e-b58a-cf8d02be15c7",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "server_name": "qqq.tzm-99.x10.mx",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/eyJqdW5rIjoidkdaU0lINmNrNUpHMkIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119",
-        "headers": {
-          "Host": "qqq.tzm-99.x10.mx"
-        }
-      }
-    },
-    {
-      "type": "direct",
-      "tag": "direct"
+  },
+  "transport": {
+    "type": "ws",
+    "path": "/eyJqdW5rIjoienJmMXlnUDBEIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ==",
+    "max_early_data": 2560,
+    "early_data_header_name": "Sec-WebSocket-Protocol",
+    "headers": {
+      "Host": "qqq.tzm-99.x10.mx"
     }
-  ],
-  "route": {
-    "auto_detect_interface": true,
-    "final": "proxy"
   }
 }

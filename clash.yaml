@@ -1,0 +1,26 @@
+proxies:
+  - name: "💦 3 - VLESS - IPv4 : 443"
+    type: vless
+    server: 172.66.47.115
+    port: 443
+    uuid: bd89f196-6cbc-41a8-a35a-c94fc1169787
+    udp: false
+    tls: true
+    network: ws
+    servername: AASS.QWe123.GLEEze.cOM
+    client-fingerprint: chrome
+    skip-cert-verify: false
+    ws-opts:
+      path: "/eyJqdW5rIjoiTXlpZXIyaFdYIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ=="
+      headers:
+        Host: aass.qwe123.gleeze.com
+
+proxy-groups:
+  - name: "✅ Selector"
+    type: select
+    proxies:
+      - "💦 3 - VLESS - IPv4 : 443"
+      - DIRECT
+
+rules:
+  - MATCH,✅ Selector

@@ -42,13 +42,13 @@
       "type": "selector",
       "tag": "proxy",
       "outbounds": [
-        "💦 3 - VLESS - IPv4 : 443",
+        "VLESS-Node",
         "direct"
       ]
     },
     {
       "type": "vless",
-      "tag": "💦 3 - VLESS - IPv4 : 443",
+      "tag": "VLESS-Node",
       "server": "188.114.96.3",
       "server_port": 443,
       "uuid": "11566ad8-9fb9-4f0e-b58a-cf8d02be15c7",
